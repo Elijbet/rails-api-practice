@@ -8,71 +8,54 @@
 
 
 user_list = [
-  [ "Lena Berger" ],
-  [ "Frank Noor" ],
-  [ "Ben Heidi" ],
-  [ "Nathan Kim" ],
-  [ "Karl West" ],
-  [ "Sally Reed" ],
-  [ "Linda Chang" ],
-  [ "Robert Carmel" ],
-  [ "Max Phoebe" ], 
-  [ "Matt Mundi" ]
+  [ "Lena Berger", "lena@mail.com" ],
+  [ "Frank Noor", "frank@mail.com" ],
+  [ "Ben Heidi", "ben@mail.com" ],
+  [ "Nathan Kim", "nathan@mail.com" ],
+  [ "Karl West", "karl@mail.com" ],
+  [ "Sally Reed", "sally@mail.com" ],
+  [ "Linda Chang", "linda@mail.com" ],
+  [ "Robert Carmel", "robert@mail.com" ],
+  [ "Max Phoebe", "max@mail.com" ], 
+  [ "Matt Mundi", "matt@mail.com" ]
 ]
 
-user_list.each do |name|
-  User.create( name:name )
+user_list.each do |name, email|
+  User.create!( name:name, email:email )
 
 end
 
-rental_units = [
+rental_unit_list = [
 
-  [ "119 S Los Robles", 4, 2 ],
-  [ "56 St John", 5, 2 ],
-  [ "455 N Noor", 6, 2 ]
+  [ "119 S Los Robles", 4, 2, 45, 3.5, 1 ],
+  [ "56 St John", 5, 2, 35, 3, 2 ],
+  [ "455 N Noor", 6, 2, 55, 2.3, 3 ]
 
 ]
 
-rental_units.each do |address, rooms, bathrooms|
-  RentalUnit.create( address:address, rooms:rooms, bathrooms:bathrooms )
+rental_unit_list.each do |address, rooms, bathrooms, price, price_per_room, user_id|
+  RentalUnit.create!( address:address, rooms:rooms, bathrooms:bathrooms, price:price, price_per_room:price_per_room, user_id:user_id)
 
 end
 
-price = [
-  [ 4.5 ],
-  [ 5 ],
-  [ 6.5 ],
-  [ 6 ],
-  [ 2.5 ],
-  [ 3 ],
-  [ 5.6 ],
-  [ 6 ],
-  [ 5.6 ], 
-  [ 4 ]
-]
 
-price.each do |price|
-  RentalUnit.create( price:price )
+# user_list = [
+#   [ "Lena", "Berger", "lena@new.com", "password" ],
+#   [ "Frank", "Noor", "frank@new.com", "password" ],
+#   [ "Ben", "Heidi", "ben@new.com", "password" ],
+#   [ "Nathan", "Kim", "nathan@new.com", "password" ],
+#   [ "Karl", "West", "karl@new.com", "password"],
+#   [ "Sally", "Reed", "sally@new.com", "password"],
+#   [ "Linda", "Chang", "linda@new.com", "password"],
+#   [ "Robert", "Carmel", "robert@new.com", "password"],
+#   [ "Max", "Phoebe", "max@new.com", "password"], 
+#   [ "Matt", "Mundi", "matt@new.com", "password"]
+# ]
 
-end
+# user_list.each do |first_name, last_name, email, password|
+#   User.create( first_name:first_name, last_name:last_name, email:email, password:password, password_confirmation:password )
 
-price_per_room = [
-  [ 4.5 ],
-  [ 5 ],
-  [ 6.5 ],
-  [ 6 ],
-  [ 2.5 ],
-  [ 3 ],
-  [ 5.6 ],
-  [ 6 ],
-  [ 5.6 ], 
-  [ 4 ]
-]
-
-price_per_room.each do |price|
-  RentalUnit.create( price:price )
-
-end
+# end
 # 50.times do
 #   User.create([{
 #     email: Faker::Internet.email,

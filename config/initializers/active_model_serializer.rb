@@ -5,3 +5,5 @@
 
 ActiveModel::Serializer.config.adapter = ActiveModel::Serializer::Adapter::JsonApi
 
+# NOTE: ActiveModel::Serializer::Adapter::JsonApi.new is deprecated; 
+# use ActiveModelSerializers::Adapter::JsonApi.new instead

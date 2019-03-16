@@ -1,5 +1,5 @@
 class RentalUnitsController < ApplicationController
-  before_action :set_rental_unit, only: [:show, :update, :destroy]
+  before_action :set_rental_unit, only: [:index, :show, :update, :destroy]
 
   # GET /rental_units
   def index

@@ -1,7 +1,9 @@
 Rails.application.configure do
 
   # Set which cache store we'll be using.
-  config.cache_store = :mem_cache_store, "localhost" config.action_controller.perform_caching = true
+  config.cache_store = :mem_cache_store, "localhost" 
+  config.action_controller.perform_caching = true
+  
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on
